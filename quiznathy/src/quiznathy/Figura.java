@@ -7,7 +7,7 @@ public class Figura {
 	private Main app;
 	private int tam, forma;
 	private float x, y;
-	
+
 	
 	
 	public Figura(Main app, float x,float y, int tam, int forma) {
@@ -41,17 +41,21 @@ public class Figura {
 	}*/
 	}
 	
+	
 	public void pintar() {
 		switch(forma){
+		
 		case 0:
+		//app.fill(app.random(0,255),app.random(0,255),app.random(0,255));
 		app.rectMode(app.CENTER);
 		app.rect(x,y,tam,tam);
 		break;
 		
 		case 1:
+		//app.fill(app.random(0,255),app.random(0,255),app.random(0,255));
 			app.ellipse(x,y,tam,tam);
 		}
-	
+		
 	}
 	public void retorno() {
 		if(y>app.height) {
@@ -76,4 +80,6 @@ public class Figura {
 		y++;
 	}
 	}
+	
 }
+

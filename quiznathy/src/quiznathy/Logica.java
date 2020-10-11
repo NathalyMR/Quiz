@@ -14,8 +14,12 @@ private int [] posiciones=new int [4];
 private int [] formas=new int [2];
 
 
+
+
 	
 	public Logica(Main app) {
+	    
+		
 		this.app = app;
 		figuras = new ArrayList<Figura>();
 		posiciones[0]=100;
@@ -26,6 +30,7 @@ private int [] formas=new int [2];
 		formas [1]=1;
 		
 		
+	
 	
 
 		
@@ -53,8 +58,11 @@ private int [] formas=new int [2];
 	
 	
 	public void click() {
-		figuras.add(new Figura(app,posiciones[(int)app.random(0,4)], 0, 50, formas[(int)app.random(0,2)] ));
+		
+	if(figuras.add(new Figura(app,posiciones[(int)app.random(0,4)], 0, 50, formas[(int)app.random(0,2)] ))){
+		app.fill(app.random(0,255),app.random(0,255),app.random(0,255));
 	}
-	
-	
 }
+
+	  }
+
