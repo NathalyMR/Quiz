@@ -5,16 +5,17 @@ import processing.core.PApplet;
 public class Figura {
 	
 	private Main app;
-	private int tam;
+	private int tam, forma;
 	private float x, y;
-	private String forma;
 	
 	
-	public Figura(Main app, float x,float y, int tam) {
+	
+	public Figura(Main app, float x,float y, int tam, int forma) {
 		this.app = app;
 		this.y = y;
 		this.x=x;
 		this.tam=tam;
+		this.forma=forma;
 		
 		//tam = (int) this.app.random(5, 40);
 		
@@ -41,26 +42,21 @@ public class Figura {
 	}
 	
 	public void pintar() {
+		switch(forma){
+		case 0:
 		app.rectMode(app.CENTER);
 		app.rect(x,y,tam,tam);
+		break;
+		
+		case 1:
+			app.ellipse(x,y,tam,tam);
+		}
 	
-		//this.app.fill(color,80,80);
-		
-		/*switch (forma) {
-		
-				
-		case "circulo":
-			app.ellipse(x, y, tam, tam);
-			
-			break;
-			
-		case "cuadrado":
-			app.rectMode(app.CENTER);
-			app.rect(x,y,tam,tam);
-
-			break;
-		}*/
-		//this.app.fill(this.app.color(0, 0, 80));
+	}
+	public void retorno() {
+		if(y>app.height) {
+	    	y=0;
+	    }
 	}
 	
 	public void setY(int y) {
@@ -71,26 +67,7 @@ public class Figura {
 		this.x = x;
 	}
 	
-	/*public int getColor() {
-		return color;
-	}
 	
-		
-	public int getFigura() {
-		return figura;
-	}
-	
-	public void setFigura(int figura) {
-		this.figura = figura;
-	}
-	
-	public String getForma() {
-		return forma;
-	}
-
-	public void setForma(String forma) {
-		this.forma = forma;
-	}*/
 	public void mover() {
 		y++;
 	}

@@ -11,6 +11,7 @@ private Main app;
 	
 private ArrayList<Figura> figuras;
 private int [] posiciones=new int [4];
+private int [] formas=new int [2];
 
 
 	
@@ -21,6 +22,8 @@ private int [] posiciones=new int [4];
 		posiciones[1]=200;
 		posiciones[2]=300;
 		posiciones[3]=400;
+		formas[0]=0;
+		formas [1]=1;
 		
 		
 	
@@ -38,6 +41,7 @@ private int [] posiciones=new int [4];
 		    Figura figura = figuras.get(i);
 		    figura.pintar();
 		    figura.mover();
+		    figura.retorno();
 		}
 		
 		    
@@ -49,7 +53,7 @@ private int [] posiciones=new int [4];
 	
 	
 	public void click() {
-		figuras.add(new Figura(app,posiciones[(int)app.random(0,4)], 0, 50));
+		figuras.add(new Figura(app,posiciones[(int)app.random(0,4)], 0, 50, formas[(int)app.random(0,2)] ));
 	}
 	
 	
