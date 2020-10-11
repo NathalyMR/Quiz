@@ -69,6 +69,11 @@ public class Figura {
 	
 	
 	public void mover() {
+		if(app.mouseX>=x-tam/2 && app.mouseX<x+tam/2 && app.mouseY<=y+tam/2 && app.mouseY>=y-tam/2) {
+				
+			y+=0;
+	}else {
 		y++;
 	}
 	}
+}
